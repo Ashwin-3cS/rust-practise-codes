@@ -12,18 +12,39 @@
 //                                                      // f32 defines the floating point number
 // }
 
+// fn main() {
+//     // let is_male = false;
+//     let is_male = true;
+//     let is_above_18 = true;
+
+//     if is_male {
+//         println!("You are a male");
+//     } else {
+//         println!("You are not a male");
+//     }
+
+//     if is_male && is_above_18 {
+//         print!("You are a legal male adult");
+//     }
+// }
+
+// Strings in Rust
+
 fn main() {
-    // let is_male = false;
-    let is_male = true;
-    let is_above_18 = true;
+    // let greeting = "Hello, world!"; // its stack allocated
 
-    if is_male {
-        println!("You are a male");
-    } else {
-        println!("You are not a male");
-    }
+    let greeting = String::from("hello world"); // its heap allocated (growing and dynamic allocation)
+    println!("{}", greeting);
 
-    if is_male && is_above_18 {
-        print!("You are a legal male adult");
-    }
+    //printing the first character of the string greeting
+    // print!("{}", greeting.chars().nth(1)); // this will throw up an error since rust is a strongly typed language ; and tells in a way that it is not sure of the type of the variable
+
+    let char1 = greeting.chars().nth(1).unwrap(); // this will print the second character of the string greeting
+    print!("{}", char1); // it prints the second character of the string greeting ; since we have used unwrap() method, it will not throw up an error ;why? because unwrap() method is used to handle the error
+
+    //  What unwrap() Does
+    // The unwrap() method is called on an Option (or Result) to extract the value if it exists. It has the following behavior:
+
+    // If the value is Some(value), unwrap() returns the value.
+    // If the value is None, unwrap() panics (causes the program to crash) with an error message that you provide.
 }
