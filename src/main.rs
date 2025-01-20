@@ -30,21 +30,59 @@
 
 // Strings in Rust
 
+// fn main() {
+//     // let greeting = "Hello, world!"; // its stack allocated
+
+//     let greeting = String::from("hello world"); // its heap allocated (growing and dynamic allocation)
+//     println!("{}", greeting);
+
+//     //printing the first character of the string greeting
+//     // print!("{}", greeting.chars().nth(1)); // this will throw up an error since rust is a strongly typed language ; and tells in a way that it is not sure of the type of the variable
+
+//     let char1 = greeting.chars().nth(1).unwrap(); // this will print the second character of the string greeting
+//     print!("{}", char1); // it prints the second character of the string greeting ; since we have used unwrap() method, it will not throw up an error ;why? because unwrap() method is used to handle the error
+
+//     //  What unwrap() Does
+//     // The unwrap() method is called on an Option (or Result) to extract the value if it exists. It has the following behavior:
+
+//     // If the value is Some(value), unwrap() returns the value.
+//     // If the value is None, unwrap() panics (causes the program to crash) with an error message that you provide.
+// }
+
+//Conditionals and modules and for loops usage in Rust
+fn add(a: i32, b: i32) -> i32 {
+    return a + b;
+}
+
+mod char_finder {
+    pub fn get_first_char(sentence: String) -> char {
+        // this function is private until we declare the pub keyword
+        let ans_char = sentence.chars().nth(0).unwrap();
+        return ans_char;
+    }
+}
+
+mod for_looper_numbers {
+    pub fn number_input(n: i32) {
+        let word: String = String::from("Hello");
+        let count = n as usize;
+        for _i in 0..count {
+            println!("{}{}", word, _i)
+        }
+    }
+}
 fn main() {
-    // let greeting = "Hello, world!"; // its stack allocated
+    let result_add: i32 = add(2, 3);
+    println!(" The Result is {  }", result_add);
 
-    let greeting = String::from("hello world"); // its heap allocated (growing and dynamic allocation)
-    println!("{}", greeting);
+    if result_add > 5 {
+        println!("The Result is above 5")
+    } else {
+        println!("The result is below 5")
+    }
+    let sentence = String::from("ashwin");
+    let first_char_found = char_finder::get_first_char(sentence);
+    println!("The first character of the word is {} ", first_char_found);
 
-    //printing the first character of the string greeting
-    // print!("{}", greeting.chars().nth(1)); // this will throw up an error since rust is a strongly typed language ; and tells in a way that it is not sure of the type of the variable
-
-    let char1 = greeting.chars().nth(1).unwrap(); // this will print the second character of the string greeting
-    print!("{}", char1); // it prints the second character of the string greeting ; since we have used unwrap() method, it will not throw up an error ;why? because unwrap() method is used to handle the error
-
-    //  What unwrap() Does
-    // The unwrap() method is called on an Option (or Result) to extract the value if it exists. It has the following behavior:
-
-    // If the value is Some(value), unwrap() returns the value.
-    // If the value is None, unwrap() panics (causes the program to crash) with an error message that you provide.
+    for_looper_numbers::number_input(1000);
 }
