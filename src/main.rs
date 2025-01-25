@@ -87,46 +87,95 @@
 //     for_looper_numbers::number_input(1000);
 // }
 
-fn main() {
-    stack_fn(); // Call the function that uses stack memory
-    heap_fn(); // Call the function that uses heap memory
-    update_string(); // Call the function that changes size of variable at runtime
-}
+//Stack and Heap
 
-fn stack_fn() {
-    // Declare a few integers on the stack
-    let a = 10;
-    let b = 20;
-    let c = a + b;
-    println!("Stack function: The sum of {} and {} is {}", a, b, c);
-}
+// fn main() {
+//     stack_fn(); // Call the function that uses stack memory
+//     heap_fn(); // Call the function that uses heap memory
+//     update_string(); // Call the function that changes size of variable at runtime
+// }
 
-fn heap_fn() {
-    // Create a string, which is allocated on the heap
-    let s1 = String::from("Hello");
-    let s2 = String::from("World");
-    let combined = format!("{} {}", s1, s2);
-    println!("Heap function: Combined string is '{}'", combined);
-}
+// fn stack_fn() {
+//     // Declare a few integers on the stack
+//     let a = 10;
+//     let b = 20;
+//     let c = a + b;
+//     println!("Stack function: The sum of {} and {} is {}", a, b, c);
+// }
 
-fn update_string() {
-    // Start with a base string on the heap
-    let mut s = String::from("Initial string");
-    println!("Before update: {}", s);
+// fn heap_fn() {
+//     // Create a string, which is allocated on the heap
+//     let s1 = String::from("Hello");
+//     let s2 = String::from("World");
+//     let combined = format!("{} {}", s1, s2);
+//     println!("Heap function: Combined string is '{}'", combined);
+// }
 
-    // Append some text to the string
-    for _ in 0..500 {
-        s.push_str(" and some additional text");
-        // println!("After update: {}", s);
-        println!(
-            "Capacity:{} , Length:{} , Pointer:{:p}",
-            s.capacity(),
-            s.len(),
-            s.as_ptr()
-        );
-    }
-}
+// fn update_string() {
+//     // Start with a base string on the heap
+//     let mut s = String::from("Initial string");
+//     println!("Before update: {}", s);
+
+//     // Append some text to the string
+//     for _ in 0..500 {
+//         s.push_str(" and some additional text");
+//         // println!("After update: {}", s);
+//         println!(
+//             "Capacity:{} , Length:{} , Pointer:{:p}",
+//             s.capacity(),
+//             s.len(),
+//             s.as_ptr()
+//         );
+//     }
+// }
 
 // Pointer:0x63a96c338b70
 // Pointer:0x63a96c338b80
 // Pointer change will happen once the capacity of the heap memory is full
+
+// OWNERSHIP IN RUST
+
+//Passing stack Variables inside functions
+
+// fn main() {
+//     let x = 1; // crated on stack
+//     let y = 3; // created on stack
+//     println!("{}", sum(x, y));
+//     println!("Hello, world!");
+// }
+
+// fn sum(a: i32, b: i32) -> i32 {
+//     let c = a + b;
+//     return c;
+// }
+
+// Passing strings (heap variables) to functions as args
+
+// fn main() {
+//     let s1 = String::from("hello");
+//     let s2 = s1;
+//     println!("{}", s1); // This line would cause a compile error because ownership has been moved.
+// }
+//see notes as well for better understanding (Obsidian)
+
+//clone method in Rust
+// fn main() {
+//     let s1 = String::from("hello");
+//     let s2 = s1.clone();
+//     println!("{}", s1); // Compiles now
+// }
+
+// a function that takes ownership of a string and returns it back
+
+// fn main() {
+//     let s1 = String::from("hello");
+//     let s2 = takes_ownership(s1);
+//     println!("{}", s2);
+// }
+
+// fn takes_ownership(some_string: String) -> String {
+//     println!("{}", some_string);
+//     return some_string; // return the string ownership back to the original main fn
+// }
+
+fn main() {}
