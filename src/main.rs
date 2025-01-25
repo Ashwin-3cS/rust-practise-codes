@@ -178,6 +178,23 @@
 //     return some_string; // return the string ownership back to the original main fn
 // }
 
+//Borrowing and Reference
+//Reference
+// fn main() {
+//     let s1 = String::from("hello");
+//     let s2 = &s1; //Referencing s1 (s2 is just having a pointer to point out to s1)
+//     print!("{}", s1);
+// }
+
+//Borrowing
+
 fn main() {
-    println!("Hello, world!");
+    let s1 = String::from("hello");
+    let s2 = &s1; //Referencing s1 (s2 is just having a pointer to point out to s1)
+    print_word(s2);
+    print!("{}", s1);
+}
+
+fn print_word(word: &String) {
+    print!("{}", word)
 }
