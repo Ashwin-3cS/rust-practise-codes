@@ -178,4 +178,6 @@
 //     return some_string; // return the string ownership back to the original main fn
 // }
 
-fn main() {}
+fn main() {
+    println!("Hello, world!");
+}
