@@ -188,13 +188,31 @@
 
 //Borrowing
 
+// fn main() {
+//     let s1 = String::from("hello");
+//     let s2 = &s1; //Referencing s1 (s2 is just having a pointer to point out to s1)
+//     print_word(s2);
+//     print_word1(s2);
+
+//     println!("{}", s1);
+// }
+// //Immutable Borrow is happening here ; we can't change the value of s2 ; we can only read the value of s2
+// fn print_word(word: &String) {
+//     println!("{}", word)
+// }
+// //Multiple Immutable Borrowing can happen in Rust ; but only one mutable borrowing can happen in Rust
+// fn print_word1(word: &String) {
+//     println!("{}", word)
+// }
+
+//Mutable borrowing
+//notice the mut keyword in the function argument that is in update_word function and as well in main function being passed as an argument
 fn main() {
-    let s1 = String::from("hello");
-    let s2 = &s1; //Referencing s1 (s2 is just having a pointer to point out to s1)
-    print_word(s2);
-    print!("{}", s1);
+    let mut s1 = String::from("Hello");
+    update_word(&mut s1);
+    println!("{}", s1);
 }
 
-fn print_word(word: &String) {
-    print!("{}", word)
+fn update_word(word: &mut String) {
+    word.push_str(" World");
 }
