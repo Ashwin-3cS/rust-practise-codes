@@ -207,12 +207,16 @@
 
 //Mutable borrowing
 //notice the mut keyword in the function argument that is in update_word function and as well in main function being passed as an argument
-fn main() {
-    let mut s1 = String::from("Hello");
-    update_word(&mut s1);
-    println!("{}", s1);
-}
+// fn main() {
+//     let mut s1 = String::from("Hello");
+//     update_word(&mut s1);
+//     println!("{}", s1);
+// }
 
-fn update_word(word: &mut String) {
-    word.push_str(" World");
-}
+// fn update_word(word: &mut String) {
+//     word.push_str(" World");
+// }
+
+// // This avoids the problem of having multiple mutable references to the same data, which can cause synchronization issues. Rust’s ownership system ensures that there is only one mutable reference to a piece of data at a time.
+
+fn main() {}
