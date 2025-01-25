@@ -49,40 +49,42 @@
 //     // If the value is None, unwrap() panics (causes the program to crash) with an error message that you provide.
 // }
 
-//Conditionals and modules and for loops usage in Rust
-fn add(a: i32, b: i32) -> i32 {
-    return a + b;
-}
+// //Conditionals and modules and for loops usage in Rust
+// fn add(a: i32, b: i32) -> i32 {
+//     return a + b;
+// }
 
-mod char_finder {
-    pub fn get_first_char(sentence: String) -> char {
-        // this function is private until we declare the pub keyword
-        let ans_char = sentence.chars().nth(0).unwrap();
-        return ans_char;
-    }
-}
+// mod char_finder {
+//     pub fn get_first_char(sentence: String) -> char {
+//         // this function is private until we declare the pub keyword
+//         let ans_char = sentence.chars().nth(0).unwrap();
+//         return ans_char;
+//     }
+// }
 
-mod for_looper_numbers {
-    pub fn number_input(n: i32) {
-        let word: String = String::from("Hello");
-        let count = n as usize;
-        for _i in 0..count {
-            println!("{}{}", word, _i)
-        }
-    }
-}
-fn main() {
-    let result_add: i32 = add(2, 3);
-    println!(" The Result is {  }", result_add);
+// mod for_looper_numbers {
+//     pub fn number_input(n: i32) {
+//         let word: String = String::from("Hello");
+//         let count = n as usize;
+//         for _i in 0..count {
+//             println!("{}{}", word, _i)
+//         }
+//     }
+// }
+// fn main() {
+//     let result_add: i32 = add(2, 3);
+//     println!(" The Result is {  }", result_add);
 
-    if result_add > 5 {
-        println!("The Result is above 5")
-    } else {
-        println!("The result is below 5")
-    }
-    let sentence = String::from("ashwin");
-    let first_char_found = char_finder::get_first_char(sentence);
-    println!("The first character of the word is {} ", first_char_found);
+//     if result_add > 5 {
+//         println!("The Result is above 5")
+//     } else {
+//         println!("The result is below 5")
+//     }
+//     let sentence = String::from("ashwin");
+//     let first_char_found = char_finder::get_first_char(sentence);
+//     println!("The first character of the word is {} ", first_char_found);
 
-    for_looper_numbers::number_input(1000);
-}
+//     for_looper_numbers::number_input(1000);
+// }
+
+fn main() {}
