@@ -220,21 +220,46 @@
 // // This avoids the problem of having multiple mutable references to the same data, which can cause synchronization issues. Rust’s ownership system ensures that there is only one mutable reference to a piece of data at a time.
 
 //Struct in rust
+// fn main() {
+//     // Define the struct first, outside the main function
+//     struct User {
+//         name: String, //stores in heap ; the len; pointer and capacity will be stored in stack and which points to stack
+//         ph_no: u64,   // stores in stack
+//                       // check notes in obsidian
+//     }
+
+//     // Create an instance of User
+//     let name: String = String::from("Ashwin");
+//     let user = User { name, ph_no: 12345 };
+
+//     // Access the struct fields using dot notation
+//     println!(
+//         "The name is {} and his phone-number is {}",
+//         user.name, user.ph_no
+//     );
+// }
+
+// Implement in struct
+
 fn main() {
-    // Define the struct first, outside the main function
-    struct User {
-        name: String, //stores in heap ; the len; pointer and capacity will be stored in stack and which points to stack
-        ph_no: u64,   // stores in stack
-                      // check notes in obsidian
+    struct Add {
+        var_a: u64,
+        var_b: u64,
     }
 
-    // Create an instance of User
-    let name: String = String::from("Ashwin");
-    let user = User { name, ph_no: 12345 };
+    impl Add {
+        fn add_impl(&self) -> u64 {
+            &self.var_a + &self.var_b
+        }
+    }
 
-    // Access the struct fields using dot notation
+    let add_operation = Add {
+        var_a: 32,
+        var_b: 10,
+    };
+
     println!(
-        "The name is {} and his phone-number is {}",
-        user.name, user.ph_no
+        "This is the answer for add_operation implemented using impl in structs {}",
+        add_operation.add_impl()
     );
 }
