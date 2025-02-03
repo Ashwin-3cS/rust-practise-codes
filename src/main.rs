@@ -241,25 +241,48 @@
 
 // Implement in struct
 
+// fn main() {
+//     struct Add {
+//         var_a: u64,
+//         var_b: u64,
+//     }
+
+//     impl Add {
+//         fn add_impl(&self) -> u64 {
+//             &self.var_a + &self.var_b
+//         }
+//     }
+
+//     let add_operation = Add {
+//         var_a: 32,
+//         var_b: 10,
+//     };
+
+//     println!(
+//         "This is the answer for add_operation implemented using impl in structs {}",
+//         add_operation.add_impl()
+//     );
+// }
+
+// Enum in Rust
 fn main() {
-    struct Add {
-        var_a: u64,
-        var_b: u64,
+    enum Colors {
+        Red,
+        Yellow,
+        Blue,
     }
 
-    impl Add {
-        fn add_impl(&self) -> u64 {
-            &self.var_a + &self.var_b
+    // Fixed parameter syntax and renamed to 'color'
+    fn choose_color(color: Colors) {
+        // Using match for enum comparison
+        match color {
+            Colors::Red => println!("user chose red"),
+            Colors::Yellow => println!("user chose yellow"),
+            Colors::Blue => println!("user chose blue"),
         }
     }
 
-    let add_operation = Add {
-        var_a: 32,
-        var_b: 10,
-    };
-
-    println!(
-        "This is the answer for add_operation implemented using impl in structs {}",
-        add_operation.add_impl()
-    );
+    // Example usage
+    let selected_color = Colors::Red;
+    choose_color(selected_color);
 }
