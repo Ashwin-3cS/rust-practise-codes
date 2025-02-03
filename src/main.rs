@@ -219,4 +219,22 @@
 
 // // This avoids the problem of having multiple mutable references to the same data, which can cause synchronization issues. Rust’s ownership system ensures that there is only one mutable reference to a piece of data at a time.
 
-fn main() {}
+//Struct in rust
+fn main() {
+    // Define the struct first, outside the main function
+    struct User {
+        name: String, //stores in heap ; the len; pointer and capacity will be stored in stack and which points to stack
+        ph_no: u64,   // stores in stack
+                      // check notes in obsidian
+    }
+
+    // Create an instance of User
+    let name: String = String::from("Ashwin");
+    let user = User { name, ph_no: 12345 };
+
+    // Access the struct fields using dot notation
+    println!(
+        "The name is {} and his phone-number is {}",
+        user.name, user.ph_no
+    );
+}
