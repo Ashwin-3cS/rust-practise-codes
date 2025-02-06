@@ -265,24 +265,51 @@
 // }
 
 // Enum in Rust
-fn main() {
-    enum Colors {
-        Red,
-        Yellow,
-        Blue,
-    }
+// fn main() {
+//     enum Colors {
+//         Red,
+//         Yellow,
+//         Blue,
+//     }
 
-    // Fixed parameter syntax and renamed to 'color'
-    fn choose_color(color: Colors) {
-        // Using match for enum comparison
-        match color {
-            Colors::Red => println!("user chose red"),
-            Colors::Yellow => println!("user chose yellow"),
-            Colors::Blue => println!("user chose blue"),
+//     // Fixed parameter syntax and renamed to 'color'
+//     fn choose_color(color: Colors) {
+//         // Using match for enum comparison
+//         match color {
+//             Colors::Red => println!("user chose red"),
+//             Colors::Yellow => println!("user chose yellow"),
+//             Colors::Blue => println!("user chose blue"),
+//         }
+//     }
+
+//     // Example usage
+//     let selected_color = Colors::Red;
+//     choose_color(selected_color);
+//     // println!("{}", Colors::Red);
+// }
+
+// Pattern matching in Rust
+
+fn main() {
+    enum Shapes {
+        Square(f64),
+        Rectangle(f64, f64),
+    };
+
+    fn calculate_area_ofTheShapes(shape: Shapes) -> f64 {
+        match shape {
+            Shapes::Square(side) => side * side,
+            Shapes::Rectangle(width, height) => width * height,
         }
     }
 
-    // Example usage
-    let selected_color = Colors::Red;
-    choose_color(selected_color);
+    let Sqaure_input = calculate_area_ofTheShapes(Shapes::Square((40.2)));
+    let Rectangle_input = calculate_area_ofTheShapes(Shapes::Rectangle((30.5), (40.5)));
+
+    println!("{} This is the output of the square_Area", Sqaure_input);
+
+    println!(
+        "{} This is the output of the rectangle_Area",
+        Rectangle_input
+    );
 }
