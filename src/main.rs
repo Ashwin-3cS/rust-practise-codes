@@ -356,17 +356,20 @@
 // uncomment the struct_defining_2 which is incorrect usage of simpleStruct2
 // }
 
-use std::fs;
+// use std::fs;
 
-// Result enum in rust (error handling)
-fn main() {
-    let data = fs::read_to_string("example.txt");
-    match data {
-        Ok(data_inside_file) => {
-            println!("{}", data_inside_file);
-        }
-        Err(error) => {
-            println!("{}", error);
-        }
-    }
-}
+// // Result enum in rust (error handling)
+// fn main() {
+//     let data = fs::read_to_string("example.txt");
+//     match data {
+//         Ok(data_inside_file) => {
+//             println!("{}", data_inside_file);
+//         }
+//         Err(error) => {
+//             println!("{}", error);
+//         }
+//     }
+// }
+//.unwrap() can be also done to handle the error ; but it will throw up an error if the file is not found
+
+fn main() {}
