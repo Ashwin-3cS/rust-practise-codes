@@ -356,5 +356,17 @@
 // uncomment the struct_defining_2 which is incorrect usage of simpleStruct2
 // }
 
+use std::fs;
+
 // Result enum in rust (error handling)
-fn main() {}
+fn main() {
+    let data = fs::read_to_string("example.txt");
+    match data {
+        Ok(data_inside_file) => {
+            println!("{}", data_inside_file);
+        }
+        Err(error) => {
+            println!("{}", error);
+        }
+    }
+}
