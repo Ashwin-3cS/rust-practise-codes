@@ -290,26 +290,33 @@
 
 // Pattern matching in Rust
 
-fn main() {
-    enum Shapes {
-        Square(f64),
-        Rectangle(f64, f64),
-    };
+// fn main() {
+//     enum Shapes {
+//         Square(f64),
+//         Rectangle(f64, f64),
+//     };
 
-    fn calculate_area_ofTheShapes(shape: Shapes) -> f64 {
-        match shape {
-            Shapes::Square(side) => side * side,
-            Shapes::Rectangle(width, height) => width * height,
-        }
-    }
+//     fn calculate_area_ofTheShapes(shape: Shapes) -> f64 {
+//         match shape {
+//             Shapes::Square(side) => side * side,
+//             Shapes::Rectangle(width, height) => width * height,
+//         }
+//     }
 
-    let Sqaure_input = calculate_area_ofTheShapes(Shapes::Square((40.2)));
-    let Rectangle_input = calculate_area_ofTheShapes(Shapes::Rectangle((30.5), (40.5)));
+//     let Sqaure_input = calculate_area_ofTheShapes(Shapes::Square((40.2)));
+//     let Rectangle_input = calculate_area_ofTheShapes(Shapes::Rectangle((30.5), (40.5)));
 
-    println!("{} This is the output of the square_Area", Sqaure_input);
+//     println!("{} This is the output of the square_Area", Sqaure_input);
 
-    println!(
-        "{} This is the output of the rectangle_Area",
-        Rectangle_input
-    );
-}
+//     println!(
+//         "{} This is the output of the rectangle_Area",
+//         Rectangle_input
+//     );
+// }
+
+//Result enum (error handling concepts in rust)
+// enum Result<T, E> {
+//     Ok(T),
+//     Err(E),
+// }
+fn main() {}
