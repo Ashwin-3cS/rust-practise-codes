@@ -322,34 +322,39 @@
 //these generic types if T being the string then another variable having T should also be string
 // generic types can be any types
 
-// generic types
-fn main() {
-    //Correct usage of generic types in simplestruct1
-    //if we define A being string and B being some int (throws up error)
-    //This below struct having a single generic Type being A (and assigning it to varible means both should be in the same type)
-    struct SimpleStruct1<A> {
-        var_a: A,
-        var_b: A,
-    }
+// // generic types
+// fn main() {
+//     //Correct usage of generic types in simplestruct1
+//     //if we define A being string and B being some int (throws up error)
+//     //This below struct having a single generic Type being A (and assigning it to varible means both should be in the same type)
+//     struct SimpleStruct1<A> {
+//         var_a: A,
+//         var_b: A,
+//     }
 
-    let struct_defining_1 = SimpleStruct1 {
-        var_a: "ashwin",
-        var_b: "dev",
-    };
-    println!("{}", struct_defining_1.var_a);
-    println!("{}", struct_defining_1.var_b);
+//     let struct_defining_1 = SimpleStruct1 {
+//         var_a: "ashwin",
+//         var_b: "dev",
+//     };
+//     println!("{}", struct_defining_1.var_a);
+//     println!("{}", struct_defining_1.var_b);
 
-    struct SimpleStruct2<A> {
-        var_c: A,
-        var_d: A,
-    }
-    let struct_defining_2 = SimpleStruct2 {
-        var_c: 1,
-        var_d: "ashwin", // This SimpleStruct2 will work because struct_defining2 has two generic types defined in thats A being one type and B beign another
-    };
+//     struct SimpleStruct2<A> {
+//         var_c: A,
+//         var_d: A,
+//     }
+//     let struct_defining_2 = SimpleStruct2 {
+//         var_c: 1,
+//         var_d: "ashwin", // This SimpleStruct2 will work because struct_defining2 has two generic types defined in thats A being one type and B beign another
+//     };
 
-    println!(
-        "{} incorrect usage of generic types",
-        struct_defining_2.var_d
-    );
-}
+//     println!(
+//         "{} incorrect usage of generic types",
+//         struct_defining_2.var_d
+//     );
+
+// uncomment the struct_defining_2 which is incorrect usage of simpleStruct2
+// }
+
+// Result enum in rust (error handling)
+fn main() {}
