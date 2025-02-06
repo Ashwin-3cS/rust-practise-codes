@@ -372,4 +372,28 @@
 // }
 //.unwrap() can be also done to handle the error ; but it will throw up an error if the file is not found
 
+// Crates in rust which is called as packages in TS
+
+// Example to install a random number generator package
+// use rand::rng;
+// use rand::Rng;
+
+// fn main() {
+//     // Get the thread-local random number generator
+//     let mut rng = rng();
+
+//     // Generate a random u64 number
+//     let variable_holding_random_number: u64 = rng.random();
+
+//     // Print the random number
+//     println!(
+//         "Generated random number: {}",
+//         variable_holding_random_number
+//     );
+
+//     // Example with a range (0 to 100)
+//     let random_within_range: u64 = rng.random_range(0..=100);
+//     println!("Random number between 0 and 100: {}", random_within_range);
+// }
+
 fn main() {}
